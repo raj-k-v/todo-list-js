@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="title"><span>Jss Practice</span><br>To-do list</h1>
+  <div class="container">
+    
+      <input type="text"
+      placeholder="Enter todo"
+      class="display "
+      onkeydown='if (event.key ==="Enter")Add_todos() '>
+
+
+      <input type="date" class="input  " onkeydown='if (event.key ==="Enter")Add_todos() '>
+
+      
+      <button class="add"
+      onclick="Add_todos()"
+      >Add</button>
+
+
+    <button class="clear" onclick="clrScreen()">Clear</button>
+      
+    
+      
+  
+    
+  </div>
+  
+  <div class="todos"></div>
+  
+
+
+  
+
+  
+    
+  
+<script>
+  let todoArray = [];
+
+  function rendertodo() {
+    let html = "";
+    for (let i = 0; i < todoArray.length; i++) {
+      html += `<div class="todo-item">${todoArray[i].task}${todoArray[i].date} 
+        <button onclick="dlt(${i})" class="delete">Delete</button></div>`;
+    }
+    document.querySelector(".todos").innerHTML = html;
+  }
+
+  function Add_todos() {
+    const todoDisp_val = document.querySelector(".display").value.trim();
+    const todoDate_val = document.querySelector(".input").value;
+    if (todoDisp_val !== "") {
+      todoArray.push({task :todoDisp_val, date:todoDate_val});
+      
+      
+    }
+    document.querySelector(".display").value = "";
+    rendertodo();
+  }
+
+  function clrScreen() {
+    todoArray = [];
+    document.querySelector(".todos").innerHTML = "";
+    document.querySelector(".display").value = "";
+    document.querySelector(".input").value = "";
+  }
+
+  function dlt(index) {
+    todoArray.splice(index, 1);
+    rendertodo();
+  }
+</script>
+
+</body>
+</html>

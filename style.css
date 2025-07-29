@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:monospace;
+    background-image:linear-gradient(aliceblue , #F8C8DC );
+    height: 100vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    
+}
+.title {
+    text-align: center;
+}
+.title span {
+    font-size: 25px;
+    font-weight: 100;
+}
+.container{
+    
+    display: flex;
+    
+    
+    
+    flex-wrap: wrap;
+    
+    
+    
+    
+    
+    
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+
+
+    
+    
+   
+}
+
+input[type = "text"], 
+input[type = 'date']{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    min-width: 200px;
+    font-size: 16px;
+    
+}
+.add,.clear{
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    
+    
+    
+}
+
+.add{
+    background-color: #D63384;
+    transition:background-color 0.3s  ;
+    color: white;
+    
+    
+    
+}
+.add:hover {
+    background-color:#b64061 ;
+}
+.clear{
+    background-color:	#FFB6C1 ;
+    color: #fffaf0;
+    transition:color 0.3s  ;
+}
+.clear:hover{
+    
+    color: #E75480;
+}
+
+
+@media (max-width: 600px) {
+.container {
+flex-direction: column;}
+}
+
+.todos {
+width: 100%;
+max-width: 600px;
+overflow-y: auto;
+scrollbar-width: none;
+}
+
+.todo-item {
+  padding: 10px;
+  border-radius: 6px;
+ 
+  background-color: #ffeef5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom:10px ;
+  overflow-wrap:anywhere;
+
+}
+.delete{
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #f15858;
+    white-space: nowrap;
+    /* min-width:75px; */
+   
+}
+
+
+
+
+
+
+
+
+
